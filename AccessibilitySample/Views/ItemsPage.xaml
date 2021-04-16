@@ -8,7 +8,7 @@
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}"  />
     </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
@@ -20,15 +20,29 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Padding="10" x:DataType="model:Item">
+                    <StackLayout Padding="10" x:DataType="model:Item"
+                               BackgroundColor="{Binding BackgroundColor}"
+                                 >
                         <Label Text="{Binding Text}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
+                            FontSize="18"
+                               TextColor="{Binding TextColor}"
+                               />
+                        <Label Text="{Binding Contrast}" 
+                            LineBreakMode="NoWrap" 
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="12"
+                               FontAttributes="Bold"
+                               TextColor="{Binding TextColor}"
+                               />
                         <Label Text="{Binding Description}" 
                             LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" />
+                            FontSize="12" 
+                               BackgroundColor="{Binding BackgroundColor}"
+                               TextColor="{Binding TextColor}"
+                               />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"

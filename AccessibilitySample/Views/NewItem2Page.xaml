@@ -1,9 +1,82 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="AccessibilitySample.Views.NewItem2Page">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccessibilitySample.Views.NewItem2Page"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
     <ContentPage.Content>
-        
+        <StackLayout Spacing="3" Padding="15">
+            <Label x:Name="textLabel"
+                   Text="Text"
+                   FontSize="Medium"
+                   />
+            <Entry x:Name="textEntry"
+                   Text="{Binding Text, Mode=TwoWay}"
+                   FontSize="Medium"
+                   />
+            <Label x:Name="descriptionLabel"
+                   Text="Description"
+                   FontSize="Medium"
+                   />
+            <Editor x:Name="descriptionEditor"
+                    Text="{Binding Description, Mode=TwoWay}"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Margin="0"
+                    AutomationProperties.HelpText="Hi"
+                    AutomationProperties.IsInAccessibleTree="False"
+                    />
+            <!--<Label x:Name="textColorLabel"
+                   Text="Text Color"
+                   FontSize="Medium"
+                   />
+            <Entry x:Name="textColorEntry"
+                   Text="{Binding TextColor, Mode=TwoWay}"
+                   FontSize="Medium"
+                   />
+            
+            <Label x:Name="backgroundColorLabel"
+                   Text="Background Color"
+                   FontSize="Medium"
+                   />
+            <Entry x:Name="backgroundColorEntry"
+                   Text="{Binding Text, Mode=TwoWay}"
+                   FontSize="Medium"
+                   />
+            
+            <Label x:Name="colorContrastLabel"
+                   Text="Color Contrast"
+                   FontSize="Medium"
+                   />
+            <Entry x:Name="colorContrastEntry"
+                   Text="{Binding Text, Mode=TwoWay}"
+                   FontSize="Medium"
+                   />
+                        
+            <Label x:Name="outputLabel"
+                   Text="Color Sample"
+                   FontSize="Large"
+                   Margin="10"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="{Binding BackgroundColor}"
+                   TextColor="{Binding TextColor}"
+                   />-->
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="cancelButton"
+                        Text="Cancel"
+                        Command="{Binding CancelCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        />
+                <Button x:Name="saveButton"
+                        Text="Save"
+                        Command="{Binding SaveCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        />
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

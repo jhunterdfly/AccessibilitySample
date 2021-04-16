@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AccessibilitySample.Models;
+using Xamarin.Forms;
 
 namespace AccessibilitySample.Services
 {
@@ -14,13 +15,18 @@ namespace AccessibilitySample.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.", BackgroundColor=Color.Black, TextColor=Color.White, Contrast="21 : 1"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.", BackgroundColor=Color.White, TextColor=Color.Black, Contrast="21 : 1"  },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description.", BackgroundColor=Color.FromHex("000FF0"), TextColor=Color.FromHex("FF9999"), Contrast="4.41 : 1"  },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description.", BackgroundColor=Color.FromHex("FF9999"), TextColor=Color.FromHex("000FF0"), Contrast="4.41 : 1"  },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description.", BackgroundColor=Color.FromHex("000000"), TextColor=Color.FromHex("999999"), Contrast="7.37 : 1"  },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description.", BackgroundColor=Color.FromHex("999999"), TextColor=Color.FromHex("000000"), Contrast="7.37 : 1"  },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description.", BackgroundColor=Color.FromHex("999999"), TextColor=Color.FromHex("FFFFFF") , Contrast="2.84 : 1" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description.", BackgroundColor=Color.FromHex("FFFFFF"), TextColor=Color.FromHex("999999") , Contrast="2.84 : 1" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description.", BackgroundColor=Color.FromHex("0000FF"), TextColor=Color.FromHex("000000"), Contrast="2.44 : 1"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description.", BackgroundColor=Color.FromHex("000000"), TextColor=Color.FromHex("0000FF"), Contrast="2.44 : 1"}
             };
+
         }
 
         public async Task<bool> AddItemAsync(Item item)

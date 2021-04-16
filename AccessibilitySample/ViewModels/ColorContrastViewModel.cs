@@ -10,7 +10,7 @@ using AccessibilitySample.Views;
 
 namespace AccessibilitySample.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ColorContrastViewModel : BaseViewModel
     {
         private Item _selectedItem;
 
@@ -19,9 +19,9 @@ namespace AccessibilitySample.ViewModels
         public Command AddItemCommand { get; }
         public Command<Item> ItemTapped { get; }
 
-        public ItemsViewModel()
+        public ColorContrastViewModel()
         {
-            Title = "Browse";
+            Title = "Color Contrast";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -71,7 +71,7 @@ namespace AccessibilitySample.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(NewItem2Page));
         }
 
         async void OnItemSelected(Item item)
@@ -80,7 +80,7 @@ namespace AccessibilitySample.ViewModels
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ColorContrastPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
     }
 }

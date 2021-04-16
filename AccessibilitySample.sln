@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessibilitySample.iOS", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessibilitySample", "AccessibilitySample\AccessibilitySample.csproj", "{CBBC76C0-D506-41D0-A430-0D73E42BA84B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{D4AD8A3C-4A1C-4928-931A-35DD4FC3D42C}"
+	ProjectSection(SolutionItems) = preProject
+		Accessibility Presentation.key = Accessibility Presentation.key
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
